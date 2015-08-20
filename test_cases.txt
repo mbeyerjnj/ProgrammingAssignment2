@@ -1,0 +1,16 @@
+source("cachematrix.R")
+
+foo.source <- matrix(1:4, 2, 2)
+foo <- makeCacheMatrix(foo.source)
+bar <- cacheSolve(foo)
+bar
+
+foo.source <- matrix(1:4, 2, 2)
+foo <- makeCacheMatrix(foo.source)
+print(cacheSolve(foo))
+
+
+hilbert <- function(n) { i <- 1:n; 1 / outer(i - 1, i, "+") }
+h8.source <- hilbert(8)
+h8 <- makeCacheMatrix(h8.source)
+print(cacheSolve(h8))
